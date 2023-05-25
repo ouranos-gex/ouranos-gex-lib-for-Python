@@ -1,10 +1,9 @@
-# Ouranos-GSD-lib-for-Python
-# 空間IDライブラリ
+# 空間IDライブラリ（Python版）
 
 ## 概要
 - 任意の座標を空間IDに変換するライブラリです。
 - 空間ID仕様については以下のリンクが参照して下さい。
-[Digital Architecture Design Center 3次元空間情報基盤アーキテクチャ検討会 会議資料](https://www.ipa.go.jp/dadc/architecture/pdf/pj_report_3dspatialinfo_doc-appendix_202212_1.pdf)
+[Digital Architecture Design Center 4次元時空間情報基盤 ガイドライン](https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html)
 
 ## 空間IDライブラリ利用方法
 1. 下記ディレクトリに移動します。
