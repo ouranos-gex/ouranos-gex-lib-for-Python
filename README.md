@@ -22,11 +22,7 @@ pip install .
 import SpatialId.xxx
 ```
 importと呼び出しの例はexamples/examples_api.pyにあります。
-APIの詳細についてはdocsフォルダ配下にAPI仕様書があります。
-
-## ライブラリ仕様書
-下記パスにライブラリ仕様書がありますので、参照願います。
-/XX/XX/index.html
+APIの詳細についてはdocsフォルダ配下にAPI仕様書（index.html）がありますのでご確認願います。
 
 ## 注意事項
 * ライブラリの入力可能な緯度の最大、最小値は「±85.0511287798」とします。
