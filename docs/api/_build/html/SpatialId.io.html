@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpatialId.io package &mdash; 空間ID 共通ライブラリ仕様書 ../SpatialId ドキュメント</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="SpatialId.operated package" href="SpatialId.operated.html" />
+    <link rel="prev" title="SpatialId package" href="SpatialId.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> 空間ID 共通ライブラリ仕様書
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">空間IDパッケージ</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="SpatialId.html">SpatialId package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="SpatialId.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SpatialId.io package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spatialid-io-shapefile-module">SpatialId.io.shapefile module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.operated.html">SpatialId.operated package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.shape.html">SpatialId.shape package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.common.html">SpatialId.common package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">空間ID 共通ライブラリ仕様書</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="SpatialId.html">SpatialId package</a> &raquo;</li>
+      <li>SpatialId.io package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SpatialId.io.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spatialid-io-package">
+<h1>SpatialId.io package<a class="headerlink" href="#spatialid-io-package" title="この見出しへのパーマリンク"></a></h1>
+<p>ファイルからの入力を操作するパッケージ。</p>
+<section id="spatialid-io-shapefile-module">
+<h2>SpatialId.io.shapefile module<a class="headerlink" href="#spatialid-io-shapefile-module" title="この見出しへのパーマリンク"></a></h2>
+<p>シェイプファイル(.shp)の読み込みモジュール。</p>
+<span class="target" id="module-SpatialId.io.shapefile"></span><div class="line-block">
+<div class="line">Requirements: Python 3.9+.</div>
+</div>
+<div class="line-block">
+<div class="line">シェイプファイル(.shp)の読み込みモジュール</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.read_shapefile">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">read_shapefile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.read_shapefile" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileから1レコード単位で情報を取得するジェネレータを返却する。</div>
+<div class="line"><br /></div>
+<div class="line">Shapefileには格納されている座標情報の形状を示すShape種別という情報があり、</div>
+<div class="line">本モジュールにおいては以下のShape種別の空間ID変換に対応する。</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Shape種別</p></th>
+<th class="head"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MultiPatch</p></td>
+<td><p>複数パッチ。複数の多角形を組み合わせて立体を表現する。</p>
+<p>MultiPatchを構成する部品のうち以下について対応する。</p>
+<ul class="simple">
+<li><p>TRIANGLE_STRIPE:接続された一連の三角形。</p></li>
+<li><p>TRIANGLE_FAN: 扇状の連結三角形。</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>パラメータfilepathに指定するパスは、.shpファイル、.dbfファイル、
+Shapefileのベースネーム(/path/to/example.shpの場合/path/to/example)、
+Shapefile群を含んだzipファイルのパスを指定可能である。</p>
+<p>返却されるフィールド定義情報は、ペイロードの各要素のメタ情報を格納している。
+フィールド定義情報の要素数はペイロードの要素数と一致しており、
+フィールド定義情報とペイロードで同じインデックスの情報が対応している。</p>
+<p>フィールド定義情報の各要素は4つの要素の配列で、
+各要素に以下の情報が格納される。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>インデックス</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>フィールド名</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>フィールド種別</p>
+<ul class="simple">
+<li><p>C:文字列</p></li>
+<li><p>N: 数値</p></li>
+<li><p>F: 浮動小数点数</p></li>
+<li><p>L: 真偽値</p></li>
+<li><p>D: 日付</p></li>
+<li><p>M: メモ</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>フィールド長</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>フィールド種別が数値の場合の小数部の桁数</p></td>
+</tr>
+</tbody>
+</table>
+<p>ジェネレータから返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID</span>
+<span class="p">[</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード</span>
+<span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;ABCビル&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 空間IDの水平方向精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 空間IDの垂直方向精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列、フィールド定義情報、ペイロードを返すジェネレータ</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>collections.abc.Generator</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.f_read_shapefile">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">f_read_shapefile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.f_read_shapefile" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileから1レコード単位で情報を取得するジェネレータを返却する。</div>
+<div class="line"><br /></div>
+<div class="line">Shapefileには格納されている座標情報の形状を示すShape種別という情報があり、</div>
+<div class="line">本モジュールにおいては以下のShape種別の空間ID変換に対応する。</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Shape種別</p></th>
+<th class="head"><p>概要</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MultiPatch</p></td>
+<td><p>複数パッチ。複数の多角形を組み合わせて立体を表現する。</p>
+<p>MultiPatchを構成する部品のうち以下について対応する。</p>
+<ul class="simple">
+<li><p>TRIANGLE_STRIPE:接続された一連の三角形。</p></li>
+<li><p>TRIANGLE_FAN: 扇状の連結三角形。</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>パラメータfilepathに指定するパスは、.shpファイル、.dbfファイル、
+Shapefileのベースネーム(/path/to/example.shpの場合/path/to/example)、
+Shapefile群を含んだzipファイルのパスを指定可能である。</p>
+<p>返却されるフィールド定義情報は、ペイロードの各要素のメタ情報を格納している。
+フィールド定義情報の要素数はペイロードの要素数と一致しており、
+フィールド定義情報とペイロードで同じインデックスの情報が対応している。</p>
+<p>フィールド定義情報の各要素は4つの要素の配列で、
+各要素に以下の情報が格納される。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>インデックス</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>フィールド名</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>フィールド種別</p>
+<ul class="simple">
+<li><p>C:文字列</p></li>
+<li><p>N: 数値</p></li>
+<li><p>F: 浮動小数点数</p></li>
+<li><p>L: 真偽値</p></li>
+<li><p>D: 日付</p></li>
+<li><p>M: メモ</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>フィールド長</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>フィールド種別が数値の場合の小数部の桁数</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><a href="#id1"><span class="problematic" id="id2">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入力の空間ID精度レベルを水平・垂直方向共に統一</div>
+<div class="line">出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<p>ジェネレータから返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID</span>
+<span class="p">[</span><span class="s2">&quot;XXXXXXXX&quot;</span><span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード</span>
+<span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;ABCビル&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) -- 空間IDの精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列、フィールド定義情報、ペイロードを返すジェネレータ</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>collections.abc.Generator</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.read_shapefile_bulk">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">read_shapefile_bulk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.read_shapefile_bulk" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileの情報を一括で取得する。</div>
+</div>
+<p>返却される空間IDの配列とペイロードの配列の要素数は一致し、
+同じインデックスの情報が同じレコードの情報である。</p>
+<p>返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の空間ID</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XXXXY&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の空間ID</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXZ&quot;</span><span class="p">]</span> <span class="c1"># レコード#Nの空間ID</span>
+<span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;Aビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の情報</span>
+    <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の情報</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="mi">100050</span><span class="p">,</span> <span class="s2">&quot;XXビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#Nの情報</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 空間IDの水平方向精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 空間IDの垂直方向精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列</p></li>
+<li><p>フィールド定義情報</p></li>
+<li><p>ペイロードの配列</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Rtyep</dt>
+<dd class="field-odd"><p>tuple, list, list</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>tuple[list[list[str]], list[list[<em>Any</em>]], list[list[<em>Any</em>]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.f_read_shapefile_bulk">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">f_read_shapefile_bulk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.f_read_shapefile_bulk" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileの情報を一括で取得する。</div>
+</div>
+<div class="line-block">
+<div class="line"><a href="#id3"><span class="problematic" id="id4">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入力の空間ID精度レベルを水平・垂直方向共に統一</div>
+<div class="line">出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<p>返却される空間IDの配列とペイロードの配列の要素数は一致し、
+同じインデックスの情報が同じレコードの情報である。</p>
+<p>返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の空間ID</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XXXXY&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の空間ID</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXZ&quot;</span><span class="p">]</span> <span class="c1"># レコード#Nの空間ID</span>
+<span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;Aビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の情報</span>
+    <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の情報</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="mi">100050</span><span class="p">,</span> <span class="s2">&quot;XXビル&quot;</span><span class="p">],</span> <span class="c1"># レコード#Nの情報</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) -- 空間IDの精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列</p></li>
+<li><p>フィールド定義情報</p></li>
+<li><p>ペイロードの配列</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Rtyep</dt>
+<dd class="field-odd"><p>tuple, list, list</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>tuple[list[list[str]], list[list[<em>Any</em>]], list[list[<em>Any</em>]]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.read_shapefile_bulk_with_aggregation">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">read_shapefile_bulk_with_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agg_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.read_shapefile_bulk_with_aggregation" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileの情報を一括で取得する。</div>
+</div>
+<div class="line-block">
+<div class="line">ペイロードについては空間IDをキー、値をペイロード配列の配列とする辞書型として返却する。</div>
+<div class="line">集約関数が指定された場合は、空間ID毎のペイロード配列の配列が集約関数に入力され、</div>
+<div class="line">集約関数の出力を当該空間IDに対する値とする。</div>
+</div>
+<p>返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の空間ID</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XXXXY&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の空間ID</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXZ&quot;</span><span class="p">]</span> <span class="c1"># レコード#Nの空間ID</span>
+<span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード</span>
+<span class="p">{</span>
+    <span class="s2">&quot;XXXXX&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;Aビル&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;XXXXY&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;XXXXZ&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 空間IDの水平方向精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 空間IDの垂直方向精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>agg_func</strong> (<em>Callable</em>) -- 集約関数</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列</p></li>
+<li><p>フィールド定義情報</p></li>
+<li><p>ペイロード</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>tuple, list, dict</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 集約関数の実行に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.io.shapefile.f_read_shapefile_bulk_with_aggregation">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.io.shapefile.</span></span><span class="sig-name descname"><span class="pre">f_read_shapefile_bulk_with_aggregation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agg_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.io.shapefile.f_read_shapefile_bulk_with_aggregation" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">ファイルパスを指定してShapefileを読み込み、空間ID情報に変換する。</div>
+<div class="line">Shapefileの情報を一括で取得する。</div>
+</div>
+<div class="line-block">
+<div class="line">ペイロードについては空間IDをキー、値をペイロード配列の配列とする辞書型として返却する。</div>
+<div class="line">集約関数が指定された場合は、空間ID毎のペイロード配列の配列が集約関数に入力され、</div>
+<div class="line">集約関数の出力を当該空間IDに対する値とする。</div>
+</div>
+<div class="line-block">
+<div class="line"><a href="#id5"><span class="problematic" id="id6">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入力の空間ID精度レベルを水平・垂直方向共に統一</div>
+<div class="line">出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<p>返却される値の例を以下に示す。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 空間ID配列</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">],</span> <span class="c1"># レコード#0の空間ID</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXX&quot;</span><span class="p">,</span> <span class="s2">&quot;XXXXY&quot;</span><span class="p">],</span> <span class="c1"># レコード#1の空間ID</span>
+    <span class="o">...</span>
+    <span class="p">[</span><span class="s2">&quot;XXXXZ&quot;</span><span class="p">]</span> <span class="c1"># レコード#Nの空間ID</span>
+<span class="p">]</span>
+<span class="c1"># フィールド定義情報</span>
+<span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;building_name&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="c1"># ペイロード</span>
+<span class="p">{</span>
+    <span class="s2">&quot;XXXXX&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100001</span><span class="p">,</span> <span class="s2">&quot;Aビル&quot;</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;XXXXY&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">],</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;XXXXZ&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mi">100002</span><span class="p">,</span> <span class="s2">&quot;Bビル&quot;</span><span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) -- Shapefileのファイルパス</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) -- Shapefileの文字エンコーディング</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) -- 空間IDの精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- Shapefileに格納されている座標の参照座標系。デフォルト値:4326(WGS84)</p></li>
+<li><p><strong>agg_func</strong> (<em>Callable</em>) -- 集約関数</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- ポリゴンの空間ID取得時の閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>空間IDの配列</p></li>
+<li><p>フィールド定義情報</p></li>
+<li><p>ペイロード</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>tuple, list, dict</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標系の変換に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの読み込みに失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileにサポート対象外のShape種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileにおけるPointsとZの要素数が一致しない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- MultipatchのpartsとpartTypes要素数が異なっていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのShape種別がMultiPatchであり、
+サポート対象外のpart種別が指定されていた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileの解析時に対象partTypeに必要な点の数が不足していた場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ShapefileのpartType要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- Shapefileのparts要素数が0の場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 集約関数の実行に失敗した場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- ポリゴンの空間ID取得時にエラーが発生した場合</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-SpatialId.io"></span></section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SpatialId.html" class="btn btn-neutral float-left" title="SpatialId package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpatialId.operated.html" class="btn btn-neutral float-right" title="SpatialId.operated package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright &lt;copyright&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

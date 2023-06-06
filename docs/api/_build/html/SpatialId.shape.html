@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpatialId.shape package &mdash; 空間ID 共通ライブラリ仕様書 ../SpatialId ドキュメント</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="SpatialId.common package" href="SpatialId.common.html" />
+    <link rel="prev" title="SpatialId.operated package" href="SpatialId.operated.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> 空間ID 共通ライブラリ仕様書
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">空間IDパッケージ</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="SpatialId.html">SpatialId package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="SpatialId.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.io.html">SpatialId.io package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.operated.html">SpatialId.operated package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SpatialId.shape package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-SpatialId.shape.cylinders">SpatialId.shape.cylinders module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-SpatialId.shape.point">SpatialId.shape.point module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-SpatialId.shape.polygons">SpatialId.shape.polygons module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SpatialId.common.html">SpatialId.common package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">空間ID 共通ライブラリ仕様書</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="SpatialId.html">SpatialId package</a> &raquo;</li>
+      <li>SpatialId.shape package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SpatialId.shape.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spatialid-shape-package">
+<h1>SpatialId.shape package<a class="headerlink" href="#spatialid-shape-package" title="この見出しへのパーマリンク"></a></h1>
+<p>空間IDを任意形状で操作するパッケージ。</p>
+<section id="module-SpatialId.shape.cylinders">
+<span id="spatialid-shape-cylinders-module"></span><h2>SpatialId.shape.cylinders module<a class="headerlink" href="#module-SpatialId.shape.cylinders" title="この見出しへのパーマリンク"></a></h2>
+<div class="line-block">
+<div class="line">Requirements: Python 3.9+.</div>
+</div>
+<div class="line-block">
+<div class="line">円柱の空間ID取得モジュール</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.cylinders.get_spatial_ids_on_cylinders">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.cylinders.</span></span><span class="sig-name descname"><span class="pre">get_spatial_ids_on_cylinders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_capsule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.cylinders.get_spatial_ids_on_cylinders" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">円柱を複数つなげた経路が通る空間IDを取得する。</div>
+<div class="line">円柱間の接続面は球状とする。</div>
+<div class="line">ドローンの経路や地中埋設配管が通る経路を空間IDで表現する際に使用する。</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>list</em><em>[</em><em>SpatialId.common.object.point.Point</em><em>]</em>) -- 円柱の中心の接続点。Pointを複数指定するリスト。
+2つ目の接続点は1つ目の円柱の終点となるが、2つ目の円柱の始点にもなる。</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) -- 円柱の半径(単位:m)</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 水平方向の精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 垂直方向の精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- 座標参照系</p></li>
+<li><p><strong>is_capsule</strong> (<em>bool</em>) -- 始点、終点が球状であるかを示す。True: カプセル / False: 円柱</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p>円柱を複数つなげた経路が通る空間IDのリスト</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 座標の値が不正の場合、もしくは円柱の半径が0以下の場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが存在しない場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが地理座標系ではない場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">注意</dt>
+<dd class="field-odd"><p>経度180度をまたがる点をまたがる円柱は空間ID化できない。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-SpatialId.shape.point">
+<span id="spatialid-shape-point-module"></span><h2>SpatialId.shape.point module<a class="headerlink" href="#module-SpatialId.shape.point" title="この見出しへのパーマリンク"></a></h2>
+<div class="line-block">
+<div class="line">Requirements: Python 3.9+.</div>
+</div>
+<div class="line-block">
+<div class="line">空間ID取得モジュール。</div>
+<div class="line">入力された地理座標から空間IDを出力する。</div>
+<div class="line">空間IDからその空間IDが示す頂点の座標、もしくは中心点の座標を地理座標、または、投影座標で出力する。</div>
+<div class="line">ユーザから入力された座標参照系をライブラリ内で空間座標系(EPSG4326)の座標に変換をし各操作をする。</div>
+<div class="line">CRSの指定はEPSGコードによって行う。</div>
+<div class="line">CRSとEPSGコードの一例は下記。</div>
+</div>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>CRS(地理座標系)</p></th>
+<th class="head"><p>EPEGコード</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WGS84(GPS)</p></td>
+<td><p>4326</p></td>
+</tr>
+<tr class="row-odd"><td><p>日本測地系(2011)</p></td>
+<td><p>6668</p></td>
+</tr>
+<tr class="row-even"><td><p>日本測地系(2011) + (高さ)</p></td>
+<td><p>6697</p></td>
+</tr>
+<tr class="row-odd"><td><p>日本測地系(2000)</p></td>
+<td><p>4612</p></td>
+</tr>
+<tr class="row-even"><td><p>日本測地系(1892)</p></td>
+<td><p>5132</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>CRS(投影座標系)</p></th>
+<th class="head"><p>EPEGコード</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Webメルカトル</p></td>
+<td><p>3857</p></td>
+</tr>
+<tr class="row-odd"><td><p>平面直角座標系</p></td>
+<td><p>6669〜87</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.get_spatial_ids_on_points">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">get_spatial_ids_on_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.get_spatial_ids_on_points" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">地理座標オブジェクトのリストから空間IDのリストを取得する。</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_list</strong> (<em>list</em><em>[</em><em>object</em><em>]</em>) -- 地理座標が格納されたオブジェクトのリスト</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 水平方向の精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 垂直方向の精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- ユーザ指定のCRSのEPSGコード(未指定の場合はWGS84のEPSGコード(4326)が割り当てられる)</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- pyprojを用いた変換時にInfまたはNaNが発生した場合にエラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 存在しないEPSGコードが入力された場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>空間IDのリスト</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.f_get_spatial_ids_on_points">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">f_get_spatial_ids_on_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.f_get_spatial_ids_on_points" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">地理座標オブジェクトのリストから空間IDのリストを取得する。</div>
+</div>
+<div class="line-block">
+<div class="line"><a href="#id1"><span class="problematic" id="id2">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入力の空間ID精度レベルを水平・垂直方向共に統一</div>
+<div class="line">出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_list</strong> (<em>list</em><em>[</em><em>object</em><em>]</em>) -- 地理座標が格納されたオブジェクトのリスト</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) -- 空間IDの精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- ユーザ指定のCRSのEPSGコード(未指定の場合はWGS84のEPSGコード(4326)が割り当てられる)</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- pyprojを用いた変換時にInfまたはNaNが発生した場合にエラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 存在しないEPSGコードが入力された場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>空間IDのリスト</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.get_point_on_spatial_id">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">get_point_on_spatial_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spatial_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.get_point_on_spatial_id" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">単一の空間IDからその空間IDの頂点座標、または中心座標を取得する。</div>
+<div class="line">頂点の座標は南緯、東経、上空方向は近接する頂点の座標と共有される。</div>
+<div class="line">座標は地理座標、または投影座標で返却される。</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spatial_id</strong> (<em>str</em>) -- 空間ID</p></li>
+<li><p><strong>option</strong> (<em>Enum</em>) -- 共通クラスから取得したPoint_OptionのEnum</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- ユーザ指定のCRSのEPSGコード(未指定の場合はWGS84のEPSGコード(4326)が割り当てられる)</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>StatialIdError</strong> -- pyprojを用いた変換時にInfまたはNaNが発生した場合にエラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 存在しないEPSGコードが入力された場合、エラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 指定外のoptionを指定した場合にエラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>空間IDの各頂点の座標が格納されたオブジェクトのリスト、または空間IDの中心点の座標</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.f_get_point_on_spatial_id">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">f_get_point_on_spatial_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spatial_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.f_get_point_on_spatial_id" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">単一の空間IDからその空間IDの頂点座標、または中心座標を取得する。</div>
+<div class="line">頂点の座標は南緯、東経、上空方向は近接する頂点の座標と共有される。</div>
+<div class="line">座標は地理座標、または投影座標で返却される。</div>
+</div>
+<div class="line-block">
+<div class="line"><a href="#id3"><span class="problematic" id="id4">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spatial_id</strong> (<em>str</em>) -- 空間ID</p></li>
+<li><p><strong>option</strong> (<em>Enum</em>) -- 共通クラスから取得したPoint_OptionのEnum</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- ユーザ指定のCRSのEPSGコード(未指定の場合はWGS84のEPSGコード(4326)が割り当てられる)</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>StatialIdError</strong> -- pyprojを用いた変換時にInfまたはNaNが発生した場合にエラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 存在しないEPSGコードが入力された場合、エラー</p></li>
+<li><p><strong>StatialIdError</strong> -- 指定外のoptionを指定した場合にエラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>空間IDの各頂点の座標が格納されたオブジェクトのリスト、または空間IDの中心点の座標</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.convert_projected_point_list_to_point_list">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">convert_projected_point_list_to_point_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projected_point_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projected_crs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geographic_crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.convert_projected_point_list_to_point_list" title="この定義へのパーマリンク"></a></dt>
+<dd><p>ユーザ指定の投影座標系のリストを地理座標のリストに変換する。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>projected_point_list</strong> (<em>list</em><em>[</em><em>object</em><em>]</em>) -- 投影座標のデータクラスオブジェクトのリスト</p></li>
+<li><p><strong>projected_crs</strong> (<em>int</em>) -- 入力の投影座標のCRSのEPSGコード</p></li>
+<li><p><strong>geographic_crs</strong> (<em>int</em>) -- 出力の地理座標のCRSのEPSGコード。指定がない場合はWGS84を使用する。</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが存在しない場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが投影座標ではない場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>地理座標のデータクラスオブジェクトのリストを返却する。</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.convert_point_list_to_projected_point_list">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">convert_point_list_to_projected_point_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">projected_crs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geographic_crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.convert_point_list_to_projected_point_list" title="この定義へのパーマリンク"></a></dt>
+<dd><p>地理座標系のリストをユーザ指定の投影座標のリストに変換する。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>point_list</strong> (<em>list</em><em>[</em><em>object</em><em>]</em>) -- 地理座標のデータクラスオブジェクトのリスト</p></li>
+<li><p><strong>projected_crs</strong> (<em>int</em>) -- 出力の投影座標のCRSのEPSGコード</p></li>
+<li><p><strong>geographic_crs</strong> (<em>int</em>) -- 入力の地理座標のCRSのEPSGコード。指定がない場合はWGS84を使用する。</p></li>
+</ul>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが存在しない場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 出力のEPSGコードが投影座標ではない場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">戻り値</dt>
+<dd class="field-odd"><p>投影座標のデータクラスオブジェクトのリストを返却する。</p>
+</dd>
+<dt class="field-even">戻り値の型</dt>
+<dd class="field-even"><p>list[object]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.point.check_zoom">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.point.</span></span><span class="sig-name descname"><span class="pre">check_zoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.point.check_zoom" title="この定義へのパーマリンク"></a></dt>
+<dd><p>入力の精度が0-35の範囲内か判定をする。</p>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><p><strong>zoom</strong> (<em>int</em>) -- 入力された精度</p>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p>0-35の範囲内の場合True、それ以外の場合False</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-SpatialId.shape.polygons">
+<span id="spatialid-shape-polygons-module"></span><h2>SpatialId.shape.polygons module<a class="headerlink" href="#module-SpatialId.shape.polygons" title="この見出しへのパーマリンク"></a></h2>
+<div class="line-block">
+<div class="line">Requirements: Python 3.9+.</div>
+</div>
+<div class="line-block">
+<div class="line">ポリゴンの空間ID取得モジュール</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.polygons.get_spatial_ids_on_polygons">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.polygons.</span></span><span class="sig-name descname"><span class="pre">get_spatial_ids_on_polygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">barrier_triangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_triangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.polygons.get_spatial_ids_on_polygons" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルが含まれる空間IDを取得する。</div>
+<div class="line">三角形ポリゴンが接しない内部の空間IDも合わせて取得する。</div>
+<div class="line">三角形ポリゴンに接しない内部のボクセルの内外判定は、Z方向に行う。</div>
+</div>
+<div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルが閉塞していない場合でも、内外判定は行われるが、</div>
+<div class="line">Z軸上方向に三角形ポリゴンがない場合は外部として判定する。</div>
+<div class="line">外部として判定された箇所の空間IDは返却される空間IDには含まれない。</div>
+</div>
+<div class="line-block">
+<div class="line">内部に空間IDとして取得しない空間がある場合は、</div>
+<div class="line">除外する三角形ポリゴンの集合で表されるモデルとして定義する。</div>
+</div>
+<div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルの空間IDを取得後、</div>
+<div class="line">除外する三角形ポリゴンの集合で表されるモデルの空間IDを除外する。</div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>barrier_triangles</strong> (<em>list</em><em>[</em><em>SpatialId.common.object.point.Triangle</em><em>]</em>) -- 空間IDを取得する三角形ポリゴンの集合で
+表されるモデル。Triangleオブジェクトを組み合わせ、複数指定する。</p></li>
+<li><p><strong>space_triangles</strong> (<em>list</em><em>[</em><em>SpatialId.common.object.point.Triangle</em><em>]</em>) -- 除外する三角形ポリゴンの集合で表されるモデル。
+Triangleオブジェクトを組み合わせ、複数指定する。</p></li>
+<li><p><strong>h_zoom</strong> (<em>int</em>) -- 水平方向の精度レベル</p></li>
+<li><p><strong>v_zoom</strong> (<em>int</em>) -- 垂直方向の精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- 座標参照系</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- 閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p>三角形ポリゴンの集合で表されるモデルが含まれる空間IDのリスト</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>list[string]</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 三角ポリゴンの3点が同一直線上に存在する場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 三角形ポリゴンのモデルが閉塞していない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが存在しない場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが地理座標系ではない場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">注意</dt>
+<dd class="field-odd"><p>経度180度をまたがる辺を持つポリゴンは空間ID化できない。</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpatialId.shape.polygons.f_get_spatial_ids_on_polygons">
+<span class="sig-prename descclassname"><span class="pre">SpatialId.shape.polygons.</span></span><span class="sig-name descname"><span class="pre">f_get_spatial_ids_on_polygons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">barrier_triangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">space_triangles</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4326</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_closed_checking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpatialId.shape.polygons.f_get_spatial_ids_on_polygons" title="この定義へのパーマリンク"></a></dt>
+<dd><div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルが含まれる空間IDを取得する。</div>
+<div class="line">三角形ポリゴンが接しない内部の空間IDも合わせて取得する。</div>
+<div class="line">三角形ポリゴンに接しない内部のボクセルの内外判定は、Z方向に行う。</div>
+</div>
+<div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルが閉塞していない場合でも、内外判定は行われるが、</div>
+<div class="line">Z軸上方向に三角形ポリゴンがない場合は外部として判定する。</div>
+<div class="line">外部として判定された箇所の空間IDは返却される空間IDには含まれない。</div>
+</div>
+<div class="line-block">
+<div class="line">内部に空間IDとして取得しない空間がある場合は、</div>
+<div class="line">除外する三角形ポリゴンの集合で表されるモデルとして定義する。</div>
+</div>
+<div class="line-block">
+<div class="line">三角形ポリゴンの集合で表されるモデルの空間IDを取得後、</div>
+<div class="line">除外する三角形ポリゴンの集合で表されるモデルの空間IDを除外する。</div>
+</div>
+<div class="line-block">
+<div class="line"><a href="#id5"><span class="problematic" id="id6">f_</span></a>&quot;がついてないAPIとの違いは以下：</div>
+<div class="line">入力の空間ID精度レベルを水平・垂直方向共に統一</div>
+<div class="line">出力の空間IDの並びは仕様通りの記載。</div>
+<div class="line">z/f/x/y :z{ズームレベル}/f{高さの位置}/x{経度方向の位置}/y{緯度方向の位置}</div>
+<div class="line">参照：<a class="reference external" href="https://github.com/unvt/zfxy-spec">https://github.com/unvt/zfxy-spec</a></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">パラメータ</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>barrier_triangles</strong> (<em>list</em><em>[</em><em>SpatialId.common.object.point.Triangle</em><em>]</em>) -- 空間IDを取得する三角形ポリゴンの集合で
+表されるモデル。Triangleオブジェクトを組み合わせ、複数指定する。</p></li>
+<li><p><strong>space_triangles</strong> (<em>list</em><em>[</em><em>SpatialId.common.object.point.Triangle</em><em>]</em>) -- 除外する三角形ポリゴンの集合で表されるモデル。
+Triangleオブジェクトを組み合わせ、複数指定する。</p></li>
+<li><p><strong>zoom</strong> (<em>int</em>) -- 空間IDの精度レベル</p></li>
+<li><p><strong>crs</strong> (<em>int</em>) -- 座標参照系</p></li>
+<li><p><strong>needs_closed_checking</strong> (<em>bool</em>) -- 閉塞チェックフラグ。Trueの場合はチェックを行う。</p></li>
+</ul>
+</dd>
+<dt class="field-even">戻り値</dt>
+<dd class="field-even"><p>三角形ポリゴンの集合で表されるモデルが含まれる空間IDのリスト</p>
+</dd>
+<dt class="field-odd">戻り値の型</dt>
+<dd class="field-odd"><p>list[string]</p>
+</dd>
+<dt class="field-even">例外</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>SpatialIdError</strong> -- 入力チェック結果が不正の場合のエラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 三角ポリゴンの3点が同一直線上に存在する場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 三角形ポリゴンのモデルが閉塞していない場合</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが存在しない場合、エラー</p></li>
+<li><p><strong>SpatialIdError</strong> -- 入力されたEPSGコードが地理座標系ではない場合、エラー</p></li>
+</ul>
+</dd>
+<dt class="field-odd">注意</dt>
+<dd class="field-odd"><p>経度180度をまたがる辺を持つポリゴンは空間ID化できない。</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SpatialId.operated.html" class="btn btn-neutral float-left" title="SpatialId.operated package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpatialId.common.html" class="btn btn-neutral float-right" title="SpatialId.common package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright &lt;copyright&gt;.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
