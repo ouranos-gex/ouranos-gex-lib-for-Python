@@ -6,7 +6,7 @@
 <!--[Digital Architecture Design Center 4次元時空間情報基盤 ガイドライン](https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html)-->
 <p><a href="https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html" target="_blank">Digital Architecture Design Center 4次元時空間情報基盤 ガイドライン</a></p>
 
-## 空間IDライブラリ利用方法
+## 共通ライブラリ利用方法
 1. 下記ディレクトリに移動します。
 ```
 cd src
@@ -22,9 +22,6 @@ pip install .
 import SpatialId.xxx
 ```
 importと呼び出しの例はexamples/examples_api.pyにあります。
-
-APIの詳細についてはdocsフォルダ配下にAPI仕様書がありますのでご確認願います。
-(docs/api/_build/html/index.html)
 
 ## 注意事項
 * ライブラリの入力可能な緯度の最大、最小値は「±85.0511287798」とします。
@@ -69,3 +66,7 @@ APIの詳細についてはdocsフォルダ配下にAPI仕様書があります�
 ## 免責事項
 - 本リポジトリの内容は予告なく変更・削除する可能性があります。
 - 本リポジトリの利用により生じた損失及び損害等について、いかなる責任も負わないものとします。
+
+## 詳細仕様
+APIの詳細については下記にAPI仕様書(index.html)がありますので、htmlフォルダごとダウンロードしてご確認願います。
+(docs/api/_build/html/index.html)
