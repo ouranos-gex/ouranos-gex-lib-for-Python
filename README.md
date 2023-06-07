@@ -4,7 +4,7 @@
 - 任意の座標を空間IDに変換するライブラリです。
 - 空間ID仕様については以下のリンクを参照して下さい。
 <!--[Digital Architecture Design Center 4次元時空間情報基盤 ガイドライン](https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html)-->
-<p><a href="https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html" target="_blank">Digital Architecture Design Center 4次元時空間情報基盤 ガイドライン</a></p>
+<p><a href="https://www.ipa.go.jp/digital/architecture/project/autonomousmobilerobot/3dspatial_guideline.html" target="_blank">Digital Architecture Design Center 4次元時空間情報基盤アーキテクチャガイドライン（β版）</a></p>
 
 ## 共通ライブラリ利用方法
 1. 下記ディレクトリに移動します。
