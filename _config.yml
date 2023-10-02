@@ -1,4 +1,4 @@
-# for GitHub Pages with Gekyll
+# for GitHub Pages with Jekyll
 include:
   - "_build"
   - "_static"
