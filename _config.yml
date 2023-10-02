@@ -1,0 +1,5 @@
+# for GitHub Pages with Gekyll
+include:
+  - "_build"
+  - "_static"
+  - "_sources"
