@@ -69,5 +69,5 @@ importと呼び出しの例はexamples/examples_api.pyにあります。
 - 本リポジトリの利用により生じた損失及び損害等について、いかなる責任も負わないものとします。
 
 ## 詳細仕様
-APIの詳細については下記にAPI仕様書(index.html)がありますので、htmlフォルダごとダウンロードしてご確認願います。
-(docs/api/_build/html/index.html)
+- APIの詳細については[API仕様書](https://ouranos-gex.github.io/ouranos-gex-lib-for-Python/docs/api/_build/html/)を公開しています。
+- htmlフォルダごとダウンロードしてご確認頂くことも可能です。[(/docs/api/_build/html)](/docs/api/_build/html)
